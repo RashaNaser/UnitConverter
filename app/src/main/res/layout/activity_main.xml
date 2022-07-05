@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/weightTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="serif"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Distance / Weight Converter"
+            android:textColor="@color/purple_700"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/chooseMethodSp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weightTv" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/numberEt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Enter a number"
+            app:layout_constraintEnd_toEndOf="@+id/chooseMethodSp"
+            app:layout_constraintStart_toStartOf="@+id/chooseMethodSp"
+            app:layout_constraintTop_toBottomOf="@id/chooseMethodSp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:padding="16dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/fromTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="From"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/unitFromSp"
+            app:layout_constraintStart_toStartOf="@+id/numberEt"
+            app:layout_constraintTop_toTopOf="@+id/unitFromSp" />
+
+        <Spinner
+            android:id="@+id/unitFromSp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="@+id/numberEt"
+            app:layout_constraintStart_toEndOf="@+id/fromTv"
+            app:layout_constraintTop_toBottomOf="@+id/numberEt" />
+
+        <TextView
+            android:id="@+id/toTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="To"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/unitToSp"
+            app:layout_constraintStart_toStartOf="@+id/numberEt"
+            app:layout_constraintTop_toTopOf="@+id/unitToSp" />
+
+        <Spinner
+            android:id="@+id/unitToSp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="@+id/numberEt"
+            app:layout_constraintStart_toStartOf="@+id/unitFromSp"
+            app:layout_constraintTop_toBottomOf="@id/unitFromSp" />
+
+        <TextView
+            android:id="@+id/resultToTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="0"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/numberEt"
+            app:layout_constraintStart_toStartOf="@+id/numberEt"
+            app:layout_constraintTop_toBottomOf="@id/unitToSp" />
+
+        <TextView
+            android:id="@+id/moreTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="serif"
+            android:text="You're wanna more: "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resultToTv" />
+
+        <Button
+            android:id="@+id/dateBtn"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Converter"
+            android:textColor="@color/purple_700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/moreTv"
+            app:layout_constraintStart_toEndOf="@id/moreTv"
+            app:layout_constraintTop_toTopOf="@+id/moreTv" />
+</androidx.constraintlayout.widget.ConstraintLayout></ScrollView>
